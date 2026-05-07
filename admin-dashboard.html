@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="p-6">
+    <h1 class="text-2xl text-blue-500 text-center mb-6">
+        Admin Dashboard</h1>
+    <input id="name" placeholder="Item Name" class="border p-2">
+    <input id="price" placeholder="Price" class="border p-2 mt-2">
+    <input id="img" placeholder="Image URL" class="border p-2 mt-2">
+    <button onclick="addItem()" class="bg-green-600 text-white p-2 mt-2 rounded hover:bg-green-600 transition">Add
+        Item</button>
+    <button onclick="logout()" class="bg-red-600 text-white p-2 rounded mb-4">
+        Logout
+    </button>
+    <div id="list"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/admin1.js"></script>
+   
+
+</body>
+
+</html>
