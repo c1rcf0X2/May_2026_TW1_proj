@@ -6,6 +6,7 @@ function login() {
     if (username === "admin" && password === "12345") {
         localStorage.setItem("isAdminLoggedIn", "true");
         window.location.href = "admin-dashboard.html";
+        window.location.href = "index.html";
     } else {
         alert("Invalid credentials. Please try again.");
     }

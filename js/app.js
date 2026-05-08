@@ -9,13 +9,16 @@ function displayItems(items) {
                 <img src="${item.img}" class="w-full h-40 object-cover" onerror="this.src='assets/images/default.jpg'">
                 <h2>${item.name}</h2>
                 <p>Rs. ${item.price}</p>
-                <button onclick="addToCart(${item.id})" class="bg-green-600" text-white px-2 py-1">Add</button>
-
+                <button 
+    onclick="addToCart(${item.id})"
+    class="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700">
+    Add
+</button>
             </div>`;
     });
 }
-let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
-let allMenuItems = [...allMenuItems, ...adminItems];
+//let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
+//let allMenuItems = [...allMenuItems, ...adminItems];
 
 displayItems(allMenuItems);
 
