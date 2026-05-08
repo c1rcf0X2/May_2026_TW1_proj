@@ -1,19 +1,20 @@
-// ---------- ADMIN LOGIN ----------
+// admin login
 function login() {
-    const username = document.getElementById("user").value;
-    const password = document.getElementById("password").value;
+    
+const username = document.getElementById("user").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     if (username === "admin" && password === "12345") {
         localStorage.setItem("isAdminLoggedIn", "true");
         window.location.href = "admin-dashboard.html";
-        window.location.href = "index.html";
+        //window.location.href = "index.html";
     } else {
         alert("Invalid credentials. Please try again.");
     }
 }
 
 
-// ---------- PROTECT ADMIN DASHBOARD ----------
+// protection for admin dashboard
 if (window.location.pathname.includes("admin-dashboard.html")) {
     const isLoggedIn = localStorage.getItem("isAdminLoggedIn");
 
@@ -24,7 +25,7 @@ if (window.location.pathname.includes("admin-dashboard.html")) {
 }
 
 
-// ---------- LOAD ADMIN ITEMS ----------
+// Load admin items and display
 let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
 
 function showItems() {

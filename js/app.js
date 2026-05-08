@@ -17,22 +17,33 @@ function displayItems(items) {
             </div>`;
     });
 }
-//let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
-//let allMenuItems = [...allMenuItems, ...adminItems];
+let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
+let combinedMenuItems = [...allMenuItems, ...adminItems];
 
-displayItems(allMenuItems);
+displayItems(combinedMenuItems);
 
 searchInput.addEventListener("keyup", () => {
     let val = searchInput.value.toLowerCase();
-    displayItems(allMenuItems.filter(i => i.name.toLowerCase().includes(val)));
+    displayItems(combinedMenuItemsMenuItems.filter(i => i.name.toLowerCase().includes(val)));
 
 });
 
 //function add cart
 function addToCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let item = allMenuItems.find(i => i.id === id);
+    let item = combinedMenuItems.find(i => i.id === id);
     cart.push(item);
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateItemsInCart();
     alert("Item added to cart....");
 }
+//function to update cart items in header
+function updateItemsInCart() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let cartIcon = document.getElementById("itemsInCart");
+
+    cartIcon.innerText = cart.length;
+}
+updateItemsInCart();

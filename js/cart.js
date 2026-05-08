@@ -10,7 +10,15 @@ cart.forEach((item) => {
 document.getElementById("total").innerText = "Total: Rs." + total;
 
 function placeOrder() {
-    alert("Order placed");
-    localStorage.removeItem("cart");
-    location.reload();
+    if (localStorage.getItem("cart") === null){
+        alert("Your cart is empty");
+    } else {
+        alert("Order placed");
+        localStorage.removeItem("cart");
+        location.reload();
+    }
 }
+function backToHome() {
+    window.location.href = "index.html";
+}
+

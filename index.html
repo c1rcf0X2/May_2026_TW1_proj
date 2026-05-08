@@ -18,15 +18,29 @@
             <h1 class="text-xl font-bold">Food Order App</h1>
             <input id="search" placeholder="Search...." class="text-black px-2 py-1 rounded">
 
-            <a href="cart.html" class="flex-items-center gap-2 bg-green-700 px-3 py-2 rounded hover:bg-green-800 hover:text-yellow-300 transition"><i class="fa-solid fa-cart-plus text-xl"></i><span>Cart</span></a>
+            <!--<a href="cart.html" class="flex-items-center gap-2 bg-green-700 px-3 py-2 rounded hover:bg-green-800 hover:text-yellow-300 transition"><i class="fa-solid fa-cart-shopping text-xl"></i><span class="itemsInCart"></span></a> -->
+            <a href="cart.html"
+                class="flex items-center gap-2 bg-green-700 px-4 py-2 rounded hover:bg-green-800 hover:text-yellow-300 transition relative">
+
+                <i class="fa-solid fa-cart-shopping text-2xl"></i>
+
+                <span class="font-semibold">
+                    Cart
+                </span>
+
+                <span id="itemsInCart"
+                    class="bg-red-600 text-white text-xs px-2 py-1 rounded-full absolute -top-2 -right-2">
+                    0
+                </span>
+
+            </a>
         </div>
-        <div id="menu" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+        <div id="menu" class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
         </div>
         <!-- menu items will be dynamically added here -->
         <script src="js/data.js"></script>
         <script src="js/app.js"></script>
        
-
 </body>
 
 </html>
