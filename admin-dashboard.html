@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="p-6 bg-gray-100">
+<!-- <body class="p-6 bg-gray-100">
 
     <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
 
@@ -45,6 +45,72 @@
         <div id="list"></div>
 
     </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>-->
+
+<body class="bg-gray-100">
+
+    <!-- FIXED ADMIN TOP PANEL -->
+    <div class="fixed top-0 left-0 w-full z-50 bg-gray-100 p-4">
+
+        <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+            <div class="flex flex-col md:flex-row gap-2 items-center mb-4">
+                <h1 class="text-2xl text-blue-500 mb-6 font-bold text-center">
+                    Admin Dashboard
+                </h1>
+            </div>
+            <!-- Row 1 -->
+            <div class="flex flex-col md:flex-row gap-2 items-center mb-4">
+
+                <input id="name" placeholder="Item Name" class="border p-2 rounded flex-1 w-full">
+
+                <input id="price" type="number" placeholder="Price" class="border p-2 rounded flex-1 w-full">
+
+                <input id="img" placeholder="Image URL" class="border p-2 rounded flex-1 w-full">
+
+                <button onclick="addItem()"
+                    class="bg-green-600 text-white p-2 rounded hover:bg-green-700 transition whitespace-nowrap">
+                    Add Item
+                </button>
+
+            </div>
+
+            <!-- Row 2 -->
+            <div class="flex gap-2 justify-end">
+
+                <button onclick="backToHome()" class="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">
+                    Back to Home
+                </button>
+
+                <button onclick="logout()" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 transition">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCROLLABLE MENU AREA -->
+    <main class="pt-48 pb-6 pt-60 px-4  ">
+
+        <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+
+            <h2 class="text-xl font-bold mb-3 text-center">
+                Menu Items
+            </h2>
+
+            <div id="list"></div>
+
+        </div>
+
+    </main>
+
 
     <script src="js/data.js"></script>
     <script src="js/admin.js"></script>

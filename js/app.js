@@ -17,17 +17,32 @@ function displayItems(items) {
             </div>`;
     });
 }
-let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
-let combinedMenuItems = [...allMenuItems, ...adminItems];
 
-displayItems(combinedMenuItems);
+let combinedMenuItems = [];
+
+function loadMenu() {
+    let adminItems = JSON.parse(localStorage.getItem("adminItems")) || [];
+
+    combinedMenuItems = [...allMenuItems, ...adminItems];
+
+    displayItems(combinedMenuItems);
+}
+
+loadMenu();
 
 searchInput.addEventListener("keyup", () => {
     let val = searchInput.value.toLowerCase();
-    displayItems(combinedMenuItemsMenuItems.filter(i => i.name.toLowerCase().includes(val)));
 
+    displayItems(
+        combinedMenuItems.filter(i => i.name.toLowerCase().includes(val))
+    );
 });
 
+window.addEventListener("storage", () => {
+    loadMenu();
+});
+
+setInterval(loadMenu, 2000);
 //function add cart
 function addToCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];

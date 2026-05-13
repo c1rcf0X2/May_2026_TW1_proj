@@ -12,30 +12,29 @@
 </head>
 
 <body>
-    <div class="bg-cyan-100">
-        <div class="bg-green-600 p-4 text-white flex justify-between items-center">
-
+    <div class="bg-cyan-100 pt-40 pb-20">
+        <!--<div class="bg-green-600 p-4 text-white flex justify-between items-center"> -->
+          <div class="fixed top-0 left-0 w-full z-50 bg-green-600 p-4 text-white flex justify-between items-center shadow-lg">
             <h1 class="text-xl font-bold">Food Order App</h1>
             <input id="search" placeholder="Search...." class="text-black px-2 py-1 rounded">
 
-            <!--<a href="cart.html" class="flex-items-center gap-2 bg-green-700 px-3 py-2 rounded hover:bg-green-800 hover:text-yellow-300 transition"><i class="fa-solid fa-cart-shopping text-xl"></i><span class="itemsInCart"></span></a> -->
             <a href="cart.html"
                 class="flex items-center gap-2 bg-green-700 px-4 py-2 rounded hover:bg-green-800 hover:text-yellow-300 transition relative">
 
-                <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                <i class="fa-solid fa-cart-shopping text-3xl relative -top-1 right-2"></i>
 
-                <span class="font-semibold">
+                <span class="font-semibold text-xl">
                     Cart
                 </span>
 
                 <span id="itemsInCart"
-                    class="bg-red-600 text-white text-xs px-2 py-1 rounded-full absolute -top-2 -right-2">
+                    class="bg-red-600 text-white font-semibold text-xs px-2 py-1 rounded-full absolute -top-0 right-13">
                     0
                 </span>
 
             </a>
         </div>
-        <div id="menu" class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
+        <div id="menu" class="grid grid-cols-1 md:grid-cols-4 gap-4 p-10">
         </div>
         <!-- menu items will be dynamically added here -->
         <script src="js/data.js"></script>

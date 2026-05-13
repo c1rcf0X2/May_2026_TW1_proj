@@ -126,16 +126,14 @@ function deleteItem(id) {
     showItems();
 }
 
-
 // ---------- LOGOUT ----------
 function logout() {
     localStorage.removeItem("isAdminLoggedIn");
     window.location.href = "admin.html";
 }
 
-
 // ---------- GO HOME ----------
-function goHome() {
+function backToHome() {
     window.location.href = "index.html";
 }
 
